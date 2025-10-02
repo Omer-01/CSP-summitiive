@@ -2,13 +2,28 @@ import turtle as trtl
 
 painter = trtl.Turtle()
 
+
 painter.pensize(5)
 painter.pencolor("black")
+
+color_list = ["red", "blue", "green", "purple", "orange"]
+color_prompt = "Choose a color for the house from the following options:\n" + ", ".join(color_list)
+house_color = ""
+
+# Get user input for the house color, validating against the color list
+while house_color.lower() not in color_list:
+    house_color = trtl.textinput("House Color", color_prompt)
+    if house_color is None: # Handle user canceling the input dialog
+        exit()
+    if house_color.lower() not in color_list:
+        color_prompt = "Invalid color. Please choose one from the list:\n" + ", ".join(color_list)
+
+
 
 # ---------------------
 
 # draw house body
-painter.fillcolor("gray")
+painter.fillcolor(house_color)
 painter.setheading(45)
 
 painter.goto(20,0)
