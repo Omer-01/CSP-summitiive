@@ -6,7 +6,7 @@ painter = trtl.Turtle()
 painter.pensize(5)
 painter.pencolor("black")
 
-color_list = ["red", "blue", "green", "purple", "orange"]
+color_list = ["red", "blue", "green", "purple", "orange", "light blue"]
 color_prompt = "Choose a color for the house from the following options:\n" + ", ".join(color_list)
 house_color = ""
 
